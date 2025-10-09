@@ -435,6 +435,18 @@
       const mobileMenu = document.getElementById('mobile-menu');
       mobileMenu.classList.toggle('hidden');
     }
+
+    // Melhorar transparência da navbar baseada no scroll
+    window.addEventListener('scroll', () => {
+      const header = document.querySelector('.header-glass');
+      const scrollPosition = window.scrollY;
+      
+      if (scrollPosition > 50) {
+        header.classList.add('header-scrolled');
+      } else {
+        header.classList.remove('header-scrolled');
+      }
+    });
   </script>
 </body>
 
