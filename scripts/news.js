@@ -131,9 +131,6 @@ function showNewsModal(newsItem) {
     <div class="bg-white rounded-xl p-6 max-w-2xl w-full max-h-[80vh] overflow-y-auto">
       <div class="flex justify-between items-start mb-4">
         <div>
-          <span class="inline-block bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs font-medium mb-2">
-            ${newsItem.category}
-          </span>
           <h2 class="text-2xl font-bold text-gray-900">${newsItem.title}</h2>
           <p class="text-gray-600 mt-2">
             <i class="fas fa-calendar mr-2"></i>${newsItem.date}

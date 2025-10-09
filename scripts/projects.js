@@ -5,7 +5,6 @@ const projects = [
     title: "Festança do Congo",
     description:
       "Tradicional manifestação cultural que celebra a herança africana com danças, músicas e rituais ancestrais.",
-    category: "Tradição Cultural",
     image:
       "https://img.freepik.com/vetores-premium/abaixo-escuro-com-efeito-grunge_278222-10487.jpg?semt=ais_hybrid&w=740&q=80",
     alt: "Festança do Congo",
@@ -14,7 +13,6 @@ const projects = [
     id: "projeto-2",
     title: "Festival de Praia",
     description: "Evento que une comunidade e visitantes em celebração da cultura local às margens do Rio Guaporé.",
-    category: "Evento Comunitário",
     image:
       "https://img.freepik.com/vetores-premium/abaixo-escuro-com-efeito-grunge_278222-10487.jpg?semt=ais_hybrid&w=740&q=80",
     alt: "Festival de Praia",
@@ -23,7 +21,6 @@ const projects = [
     id: "projeto-3",
     title: "Dia da Consciência Negra",
     description: "Programação especial que valoriza a identidade afro-brasileira e a história quilombola da região.",
-    category: "Educação Cultural",
     image:
       "https://img.freepik.com/vetores-premium/abaixo-escuro-com-efeito-grunge_278222-10487.jpg?semt=ais_hybrid&w=740&q=80",
     alt: "Dia da Consciência Negra",
@@ -32,7 +29,6 @@ const projects = [
     id: "projeto-4",
     title: "Oficinas de Artesanato",
     description: "Workshops que ensinam técnicas tradicionais de artesanato quilombola para jovens e adultos.",
-    category: "Educação Cultural",
     image:
       "https://img.freepik.com/vetores-premium/abaixo-escuro-com-efeito-grunge_278222-10487.jpg?semt=ais_hybrid&w=740&q=80",
     alt: "Oficinas de Artesanato",
@@ -41,7 +37,6 @@ const projects = [
     id: "projeto-5",
     title: "Preservação Histórica",
     description: "Projeto de documentação e preservação da história oral da comunidade quilombola.",
-    category: "Preservação",
     image:
       "https://img.freepik.com/vetores-premium/abaixo-escuro-com-efeito-grunge_278222-10487.jpg?semt=ais_hybrid&w=740&q=80",
     alt: "Preservação Histórica",
@@ -50,7 +45,6 @@ const projects = [
     id: "projeto-6",
     title: "Música Tradicional",
     description: "Resgate e ensino das músicas e instrumentos tradicionais da cultura quilombola.",
-    category: "Tradição Cultural",
     image:
       "https://img.freepik.com/vetores-premium/abaixo-escuro-com-efeito-grunge_278222-10487.jpg?semt=ais_hybrid&w=740&q=80",
     alt: "Música Tradicional",
@@ -58,7 +52,7 @@ const projects = [
 ];
 
 // Função para criar o HTML de um projeto
-function ProjectCard({ id, title, description, category, image, alt }) {
+function ProjectCard({ id, title, description, image, alt }) {
   return `
     <div class="group project-card">
       <div class="relative h-64 overflow-hidden">
@@ -68,9 +62,6 @@ function ProjectCard({ id, title, description, category, image, alt }) {
           class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
           loading="lazy"
           onerror="this.src='https://img.freepik.com/vetores-premium/abaixo-escuro-com-efeito-grunge_278222-10487.jpg?semt=ais_hybrid&w=740&q=80'">
-        <div class="absolute top-4 left-4">
-          <span class="project-badge">${category}</span>
-        </div>
       </div>
       <div class="p-6">
         <h3 class="text-xl font-bold mb-3 project-title">
