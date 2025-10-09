@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Teresa - Preservando a Cultura Quilombola</title>
+  <meta name="description"
+    content="Mais de 100 anos de história, tradições e resistência cultural em Vila Bela da Santíssima Trindade - MT">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+  <link rel="stylesheet" href="./styles/index.css">
+</head>
+
+<body>
+  <section class="min-h-screen bg-white relative overflow-hidden">
+    <!-- Header fixo -->
+    <div class="fixed top-0 left-0 right-0 z-50 header-glass">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+        <div class="flex justify-between items-center">
+          <a href="index.html" class="flex items-center space-x-3">
+            <img src="./assets/logo.svg" alt="Logo Teresa" class="w-10 h-10">
+            <span class="font-bold text-gray-900">Instituto Tereza de Benguela</span>
+          </a>
+          <nav class="hidden md:flex items-center space-x-8">
+            <a href="index.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Início</a>
+            <a href="doacao.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Doações</a>
+            <a href="voluntario.html" class="text-primary font-semibold">Voluntários</a>
+            <div class="flex items-center space-x-4">
+              <a href="doacao.html" class="btn-primary px-4 py-2 rounded-full text-sm font-semibold">
+                <i class="fas fa-heart mr-1"></i>Doar
+              </a>
+            </div>
+          </nav>
+          <!-- Menu mobile -->
+          <button class="md:hidden text-gray-700" onclick="toggleMobileMenu()">
+            <i class="fas fa-bars text-xl"></i>
+          </button>
+        </div>
+        <!-- Menu mobile expandido -->
+        <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 mobile-menu-glass rounded-lg">
+          <div class="flex flex-col space-y-3 pt-4">
+            <a href="index.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Início</a>
+            <a href="doacao.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Doações</a>
+            <a href="voluntario.html" class="text-primary font-semibold">Voluntários</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="pt-24 pb-16 bg-gradient-to-br from-white via-orange-50 to-yellow-50">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h1 class="text-4xl md:text-6xl font-bold mb-6">
+          <span style="color: #5E2404;">Transforme vidas através da</span><br>
+          <span class="gradient-text">Cultura Quilombola</span>
+        </h1>
+
+        <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+          Una-se a uma comunidade apaixonada por preservar tradições centenárias.
+          Cada voluntário é uma peça fundamental na nossa missão cultural.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+          <button onclick="scrollToForm()"
+            class="bg-primary px-8 py-4 rounded-full font-semibold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+            <i class="fas fa-rocket mr-2"></i>
+            Quero me candidatar
+          </button>
+          <button onclick="scrollToOpportunities()"
+            class="border-2 text-gray-700 hover:bg-gray-50 px-8 py-4 rounded-full font-semibold text-lg transition-all duration-300"
+            style="border-color: #D88E45;">
+            <i class="fas fa-info-circle mr-2"></i>
+            Ver oportunidades
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Stats Section -->
+    <div class="py-16 bg-white">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div class="stat-card">
+            <div class="text-3xl font-bold mb-2" style="color: #D88E45;">100+</div>
+            <div class="text-gray-600">Anos de História</div>
+          </div>
+          <div class="stat-card">
+            <div class="text-3xl font-bold mb-2" style="color: #D88E45;">50+</div>
+            <div class="text-gray-600">Voluntários Ativos</div>
+          </div>
+          <div class="stat-card">
+            <div class="text-3xl font-bold mb-2" style="color: #D88E45;">15</div>
+            <div class="text-gray-600">Projetos Anuais</div>
+          </div>
+          <div class="stat-card">
+            <div class="text-3xl font-bold mb-2" style="color: #D88E45;">1000+</div>
+            <div class="text-gray-600">Vidas Impactadas</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Opportunities Section -->
+    <div id="opportunities" class="py-20 section-bg-light">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-16">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: #5E2404;">
+            Áreas de Atuação
+          </h2>
+          <p class="text-xl text-gray-600 max-w-2xl mx-auto">
+            Encontre a área que mais combina com você e comece a fazer a diferença
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Card 1 -->
+          <div class="opportunity-card group cursor-pointer" onclick="selectOpportunity('educacao')">
+            <div
+              class="w-16 h-16 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+              style="background: linear-gradient(135deg, #D88E45, #F09134);">
+              <i class="fas fa-chalkboard-teacher text-2xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Educação Cultural</h3>
+            <p class="text-gray-600 mb-4">Ensine história, artesanato e tradições quilombolas para todas as idades.</p>
+            <div class="flex items-center text-sm text-gray-500">
+              <i class="fas fa-clock mr-2"></i>
+              <span>4-8h por semana</span>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="opportunity-card group cursor-pointer" onclick="selectOpportunity('eventos')">
+            <div
+              class="w-16 h-16 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+              style="background: linear-gradient(135deg, #F09134, #FEDF8A);">
+              <i class="fas fa-calendar-alt text-2xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Organização de Eventos</h3>
+            <p class="text-gray-600 mb-4">Coordene festivais, exposições e celebrações da cultura quilombola.</p>
+            <div class="flex items-center text-sm text-gray-500">
+              <i class="fas fa-clock mr-2"></i>
+              <span>Fins de semana</span>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="opportunity-card group cursor-pointer" onclick="selectOpportunity('tecnologia')">
+            <div
+              class="w-16 h-16 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+              style="background: linear-gradient(135deg, #A6490C, #D88E45);">
+              <i class="fas fa-laptop text-2xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Tecnologia & Mídia</h3>
+            <p class="text-gray-600 mb-4">Documentação, redes sociais e preservação digital da cultura.</p>
+            <div class="flex items-center text-sm text-gray-500">
+              <i class="fas fa-clock mr-2"></i>
+              <span>Remoto disponível</span>
+            </div>
+          </div>
+
+          <!-- Card 4 -->
+          <div class="opportunity-card group cursor-pointer" onclick="selectOpportunity('apoio')">
+            <div
+              class="w-16 h-16 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+              style="background: linear-gradient(135deg, #5E2404, #A6490C);">
+              <i class="fas fa-hands-helping text-2xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Apoio Comunitário</h3>
+            <p class="text-gray-600 mb-4">Suporte geral, manutenção e atividades administrativas.</p>
+            <div class="flex items-center text-sm text-gray-500">
+              <i class="fas fa-clock mr-2"></i>
+              <span>Horário flexível</span>
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="opportunity-card group cursor-pointer" onclick="selectOpportunity('comunicacao')">
+            <div
+              class="w-16 h-16 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+              style="background: linear-gradient(135deg, #FEDF8A, #F09134);">
+              <i class="fas fa-bullhorn text-2xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Comunicação</h3>
+            <p class="text-gray-600 mb-4">Divulgação, marketing e relações públicas dos projetos.</p>
+            <div class="flex items-center text-sm text-gray-500">
+              <i class="fas fa-clock mr-2"></i>
+              <span>2-4h por semana</span>
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="opportunity-card group cursor-pointer" onclick="selectOpportunity('pesquisa')">
+            <div
+              class="w-16 h-16 rounded-full flex items-center justify-center mb-4 group-hover:scale-110 transition-transform"
+              style="background: linear-gradient(135deg, #D88E45, #A6490C);">
+              <i class="fas fa-search text-2xl text-white"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-3 text-gray-900">Pesquisa Histórica</h3>
+            <p class="text-gray-600 mb-4">Documentação e preservação da história oral quilombola.</p>
+            <div class="flex items-center text-sm text-gray-500">
+              <i class="fas fa-clock mr-2"></i>
+              <span>Projetos específicos</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Form Section -->
+    <div id="application-form" class="py-20 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div class="text-center mb-12">
+          <h2 class="text-3xl md:text-4xl font-bold mb-4" style="color: #5E2404;">
+            Candidate-se Agora
+          </h2>
+          <p class="text-xl text-gray-600">
+            Preencha o formulário e dê o primeiro passo para fazer parte da nossa família
+          </p>
+        </div>
+
+        <div class="bg-gray-50 rounded-3xl p-8 md:p-12">
+          <form id="volunteerForm" class="space-y-6">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="name" class="block text-sm font-semibold text-gray-700 mb-2">Nome Completo *</label>
+                <input type="text" id="name" name="name" required
+                  class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary transition-colors">
+              </div>
+
+              <div>
+                <label for="email" class="block text-sm font-semibold text-gray-700 mb-2">Email *</label>
+                <input type="email" id="email" name="email" required
+                  class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary transition-colors">
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div>
+                <label for="phone" class="block text-sm font-semibold text-gray-700 mb-2">Telefone</label>
+                <input type="tel" id="phone" name="phone"
+                  class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary transition-colors">
+              </div>
+
+              <div>
+                <label for="age" class="block text-sm font-semibold text-gray-700 mb-2">Idade</label>
+                <select id="age" name="age"
+                  class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary transition-colors">
+                  <option value="">Selecione</option>
+                  <option value="16-25">16-25 anos</option>
+                  <option value="26-35">26-35 anos</option>
+                  <option value="36-50">36-50 anos</option>
+                  <option value="50+">Acima de 50 anos</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="motivation" class="block text-sm font-semibold text-gray-700 mb-2">Por que quer ser
+                voluntário? *</label>
+              <textarea id="motivation" name="motivation" rows="4" required
+                class="w-full px-4 py-3 border-2 border-gray-200 rounded-xl focus:outline-none focus:border-primary transition-colors resize-none"
+                placeholder="Conte-nos sua motivação e o que espera contribuir..."></textarea>
+            </div>
+
+            <div class="text-center">
+              <button type="submit"
+                class="bg-primary px-12 py-4 rounded-full font-bold text-lg shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
+                <i class="fas fa-paper-plane mr-2"></i>
+                Enviar Candidatura
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <!-- Contact Info -->
+    <div class="py-16 cta-bg">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div class="text-white space-y-4">
+          <h3 class="text-2xl font-bold">Dúvidas? Entre em contato!</h3>
+          <div
+            class="flex flex-col md:flex-row justify-center items-center space-y-2 md:space-y-0 md:space-x-8 text-lg">
+            <a href="mailto:voluntarios@teresa-quilombola.org.br" class="hover:text-yellow-300 transition-colors">
+              <i class="fas fa-envelope mr-2"></i>voluntarios@teresa-quilombola.org.br
+            </a>
+            <a href="tel:+556599999999" class="hover:text-yellow-300 transition-colors">
+              <i class="fas fa-phone mr-2"></i>(65) 9 9999-9999
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    .stat-card {
+      padding: 1.5rem;
+      border-radius: 1rem;
+      background: white;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    .stat-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .opportunity-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 1.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+
+    .opportunity-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+    }
+
+    .opportunity-card.selected {
+      border-color: #D88E45;
+      box-shadow: 0 0 0 3px rgba(216, 142, 69, 0.2);
+    }
+
+    .availability-option {
+      cursor: pointer;
+    }
+
+    .availability-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+      border: 2px solid #e5e7eb;
+      border-radius: 0.75rem;
+      transition: all 0.3s ease;
+      text-align: center;
+    }
+
+    .availability-option input:checked+.availability-card {
+      border-color: #D88E45;
+      background: linear-gradient(135deg, #D88E45, #F09134);
+      color: white;
+    }
+
+    .focus\:border-primary:focus {
+      border-color: #D88E45;
+    }
+  </style>
+
+  <script>
+    let selectedOpportunityArea = '';
+
+    function scrollToForm() {
+      document.getElementById('application-form').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function scrollToOpportunities() {
+      document.getElementById('opportunities').scrollIntoView({ behavior: 'smooth' });
+    }
+
+    function selectOpportunity(area) {
+      // Remove seleção anterior
+      document.querySelectorAll('.opportunity-card').forEach(card => {
+        card.classList.remove('selected');
+      });
+
+      // Adiciona seleção atual
+      event.currentTarget.classList.add('selected');
+
+      // Mapear áreas
+      const areaNames = {
+        'educacao': 'Educação Cultural',
+        'eventos': 'Organização de Eventos',
+        'tecnologia': 'Tecnologia & Mídia',
+        'apoio': 'Apoio Comunitário',
+        'comunicacao': 'Comunicação',
+        'pesquisa': 'Pesquisa Histórica'
+      };
+
+      selectedOpportunityArea = area;
+      document.getElementById('selectedArea').value = areaNames[area];
+    }
+
+    // Manipulação do formulário
+    document.getElementById('volunteerForm').addEventListener('submit', function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(this);
+      const data = Object.fromEntries(formData);
+
+      // Validação
+      if (!data.name || !data.email || !data.motivation || !selectedOpportunityArea) {
+        alert('Por favor, preencha todos os campos obrigatórios e selecione uma área de interesse.');
+        return;
+      }
+
+      const submitButton = this.querySelector('button[type="submit"]');
+      const originalText = submitButton.innerHTML;
+
+      submitButton.innerHTML = '<i class="fas fa-spinner fa-spin mr-2"></i>Enviando...';
+      submitButton.disabled = true;
+
+      setTimeout(() => {
+        alert('Candidatura enviada com sucesso! 🎉\nEntraremos em contato em breve.');
+        this.reset();
+        document.getElementById('selectedArea').value = '';
+        document.querySelectorAll('.opportunity-card').forEach(card => {
+          card.classList.remove('selected');
+        });
+        selectedOpportunityArea = '';
+        submitButton.innerHTML = originalText;
+        submitButton.disabled = false;
+      }, 2000);
+    });
+
+    // Smooth scroll para links âncora
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
+    }
+  </script>
+</body>
+
+</html>

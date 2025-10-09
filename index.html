@@ -16,7 +16,41 @@
 </head>
 
 <body>
-  <section class="hero-section relative flex items-center justify-center overflow-hidden">
+  <!-- Header fixo -->
+  <div class="fixed top-0 left-0 right-0 z-50 header-glass opacity-95">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
+      <div class="flex justify-between items-center">
+        <a href="index.html" class="flex items-center space-x-3">
+          <img src="./assets/logo.svg" alt="Logo Teresa" class="w-10 h-10">
+          <span class="font-bold text-gray-900">Instituto Tereza de Benguela</span>
+        </a>
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="index.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Início</a>
+          <a href="doacao.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Doações</a>
+          <a href="voluntario.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Voluntários</a>
+          <div class="flex items-center space-x-4">
+            <a href="doacao.html" class="btn-primary text-white px-4 py-2 rounded-full text-sm font-semibold">
+              <i class="fas fa-heart mr-1"></i>Doar
+            </a>
+          </div>
+        </nav>
+        <!-- Menu mobile -->
+        <button class="md:hidden text-gray-700" onclick="toggleMobileMenu()">
+          <i class="fas fa-bars text-xl"></i>
+        </button>
+      </div>
+      <!-- Menu mobile expandido -->
+      <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 mobile-menu-glass rounded-lg">
+        <div class="flex flex-col space-y-3 pt-4">
+          <a href="index.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Início</a>
+          <a href="doacao.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Doações</a>
+          <a href="voluntario.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Voluntários</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="hero-section relative flex items-center justify-center overflow-hidden" style="padding-top: 80px;">
     <div class="absolute inset-0 hero-bg">
       <div class="absolute inset-0 hero-overlay"></div>
     </div>
@@ -36,7 +70,7 @@
             <i class="fas fa-heart"></i>
             <span>Faça uma Doação</span>
           </a>
-          <a href="#voluntario"
+          <a href="voluntario.html"
             class="btn-secondary text-white px-8 py-4 rounded-full font-semibold text-lg flex items-center justify-center space-x-2">
             <i class="fas fa-users"></i>
             <span>Seja Voluntário</span>
@@ -138,6 +172,11 @@
   </section>
 
   <script>
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
+    }
+
     // Smooth scrolling para links internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
