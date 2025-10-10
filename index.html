@@ -16,7 +16,6 @@
 </head>
 
 <body>
-  <!-- Header fixo -->
   <div class="fixed top-0 left-0 right-0 z-50 header-glass">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
       <div class="flex justify-between items-center">
@@ -27,34 +26,35 @@
         <nav class="hidden md:flex items-center space-x-8">
           <a href="index.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Início</a>
           <a href="doacao.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Doações</a>
-          <a href="voluntario.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Voluntários</a>
+          <a href="voluntario.html"
+            class="text-gray-700 hover:text-primary transition-colors font-medium">Voluntários</a>
+          <a href="projetos.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Projetos</a>
           <div class="flex items-center space-x-4">
             <a href="doacao.html" class="btn-primary text-white px-4 py-2 rounded-full text-sm font-semibold">
               <i class="fas fa-heart mr-1"></i>Doar
             </a>
           </div>
         </nav>
-        <!-- Menu mobile -->
         <button class="md:hidden text-gray-700" onclick="toggleMobileMenu()">
           <i class="fas fa-bars text-xl"></i>
         </button>
       </div>
-      <!-- Menu mobile expandido -->
       <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 mobile-menu-glass rounded-lg">
         <div class="flex flex-col space-y-3 pt-4">
           <a href="index.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Início</a>
           <a href="doacao.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Doações</a>
-          <a href="voluntario.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Voluntários</a>
+          <a href="voluntario.html"
+            class="text-gray-700 hover:text-primary transition-colors font-medium">Voluntários</a>
+          <a href="projetos.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Projetos</a>
         </div>
       </div>
     </div>
   </div>
 
-  <section class="hero-section relative flex items-center justify-center overflow-hidden" style="padding-top: 80px;">
+  <section class="hero-section relative flex items-center justify-center overflow-hidden h-screen">
     <div class="absolute inset-0 hero-bg">
       <div class="absolute inset-0 hero-overlay"></div>
     </div>
-
     <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <div class="max-w-4xl mx-auto">
         <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
@@ -78,17 +78,13 @@
         </div>
       </div>
     </div>
-
-    <!-- Scroll indicator -->
     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white scroll-indicator">
       <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
         <div class="w-1 h-3 bg-white/70 rounded-full mt-2 scroll-dot"></div>
       </div>
     </div>
   </section>
-
-  <!-- Projetos em Destaque -->
-  <section class="projects-section section-bg-light">
+  <section class="projects-section section-bg-light h-screen">
     <div class="w-full py-20">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-16">
@@ -101,11 +97,10 @@
         </div>
 
         <div id="projects-container" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          <!-- Os projetos serão carregados dinamicamente aqui -->
         </div>
 
         <div class="text-center mt-12">
-          <a href="#projetos"
+          <a href="projetos.html"
             class="btn-primary text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg inline-flex items-center space-x-2">
             <span>Ver Todos os Projetos</span>
             <i class="fas fa-arrow-right"></i>
@@ -114,10 +109,7 @@
       </div>
     </div>
   </section>
-
-  <!-- Notícias e Call to Action -->
-  <section class="news-cta-section">
-    <!-- Notícias -->
+  <section class="news-cta-section h-screen">
     <div class="news-content">
       <div class="w-full py-12">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -137,13 +129,10 @@
           </div>
 
           <div id="news-container" class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <!-- As notícias serão carregadas dinamicamente aqui -->
           </div>
         </div>
       </div>
     </div>
-
-    <!-- Call to Action -->
     <div class="cta-content cta-bg">
       <div class="w-full">
         <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
@@ -176,20 +165,6 @@
       const mobileMenu = document.getElementById('mobile-menu');
       mobileMenu.classList.toggle('hidden');
     }
-
-    // Melhorar transparência da navbar baseada no scroll
-    window.addEventListener('scroll', () => {
-      const header = document.querySelector('.header-glass');
-      const scrollPosition = window.scrollY;
-      
-      if (scrollPosition > 50) {
-        header.classList.add('header-scrolled');
-      } else {
-        header.classList.remove('header-scrolled');
-      }
-    });
-
-    // Smooth scrolling para links internos
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
       anchor.addEventListener('click', function (e) {
         e.preventDefault();
@@ -204,7 +179,6 @@
       });
     });
 
-    // Controle de scroll com wheel para snap
     let isScrolling = false;
     const sections = document.querySelectorAll('section');
     let currentSection = 0;
@@ -219,7 +193,6 @@
       }
     }
 
-    // Detectar qual seção está visível
     function getCurrentSection() {
       const scrollPosition = window.scrollY;
       const windowHeight = window.innerHeight;
@@ -237,7 +210,6 @@
       return 0;
     }
 
-    // Controle de scroll com mouse wheel
     window.addEventListener('wheel', (e) => {
       e.preventDefault();
 
@@ -247,12 +219,10 @@
       currentSection = getCurrentSection();
 
       if (e.deltaY > 0) {
-        // Scroll para baixo
         if (currentSection < sections.length - 1) {
           scrollToSection(currentSection + 1);
         }
       } else {
-        // Scroll para cima
         if (currentSection > 0) {
           scrollToSection(currentSection - 1);
         }
@@ -263,7 +233,6 @@
       }, 1000);
     }, { passive: false });
 
-    // Controle de scroll com teclado
     window.addEventListener('keydown', (e) => {
       if (isScrolling) return;
 
@@ -286,7 +255,6 @@
       }
     });
 
-    // Efeito de parallax simples no hero
     window.addEventListener('scroll', () => {
       const scrolled = window.pageYOffset;
       const heroSection = document.querySelector('.hero-section');
@@ -296,21 +264,17 @@
       }
     });
 
-    // Atualizar seção atual no scroll
     window.addEventListener('scroll', () => {
       if (!isScrolling) {
         currentSection = getCurrentSection();
       }
     });
 
-    // Garantir que os projetos e notícias sejam carregados após o DOM
     document.addEventListener('DOMContentLoaded', function () {
-      // Carregar projetos se o ProjectsManager estiver disponível
       if (window.ProjectsManager) {
         window.ProjectsManager.loadProjects();
       }
 
-      // Carregar notícias se o NewsManager estiver disponível
       if (window.NewsManager) {
         window.NewsManager.loadNews();
       }

@@ -13,9 +13,8 @@
   <link rel="stylesheet" href="./styles/index.css">
 </head>
 
-<body>
-  <!-- Header fixo -->
-  <div class="fixed top-0 left-0 right-0 z-50 header-glass">
+<body class="h-screen overflow-hidden">
+  <div class="sticky top-0 left-0 right-0 z-50 header-glass">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
       <div class="flex justify-between items-center">
         <a href="index.html" class="flex items-center space-x-3">
@@ -25,55 +24,50 @@
         <nav class="hidden md:flex items-center space-x-8">
           <a href="index.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Início</a>
           <a href="doacao.html" class="text-primary font-semibold">Doações</a>
-          <a href="voluntario.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Voluntários</a>
+          <a href="voluntario.html"
+            class="text-gray-700 hover:text-primary transition-colors font-medium">Voluntários</a>
+          <a href="projetos.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Projetos</a>
           <div class="flex items-center space-x-4">
-            <a href="voluntario.html" class="border-2 border-primary text-primary px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary hover:text-white transition-colors">
+            <a href="voluntario.html"
+              class="border-2 border-primary text-primary px-4 py-2 rounded-full text-sm font-semibold hover:bg-primary hover:text-white transition-colors">
               <i class="fas fa-users mr-1"></i>Voluntário
             </a>
           </div>
         </nav>
-        <!-- Menu mobile -->
         <button class="md:hidden text-gray-700" onclick="toggleMobileMenu()">
           <i class="fas fa-bars text-xl"></i>
         </button>
       </div>
-      <!-- Menu mobile expandido -->
       <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 mobile-menu-glass rounded-lg">
         <div class="flex flex-col space-y-3 pt-4">
           <a href="index.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Início</a>
           <a href="doacao.html" class="text-primary font-semibold">Doações</a>
-          <a href="voluntario.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Voluntários</a>
+          <a href="voluntario.html"
+            class="text-gray-700 hover:text-primary transition-colors font-medium">Voluntários</a>
+          <a href="projetos.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Projetos</a>
         </div>
       </div>
     </div>
   </div>
 
-  <section class="min-h-screen cta-bg flex items-center justify-center relative overflow-hidden" style="padding-top: 80px;">
-    <!-- Background decorativo com logo -->
-    <div class="absolute inset-0 opacity-20">
-      <div class="absolute top-8">
+  <section class="h-full cta-bg flex relative py-9">
+    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+
+      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
         <img src="./assets/logo.svg" alt="Logo Teresa" class="w-64 h-64 object-contain">
       </div>
-    </div>
 
-    <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-
-        <!-- Coluna da Esquerda - Informações -->
         <div class="text-white">
-          <!-- Header -->
           <div class="mb-8">
             <h1 class="text-3xl md:text-4xl font-bold mb-4">
               Apoie a Preservação da <span class="gradient-text">Cultura Quilombola</span>
             </h1>
-
             <p class="text-lg text-cta leading-relaxed">
               Sua doação fortalece mais de 100 anos de tradições e garante que nossa herança cultural seja preservada
               para as futuras gerações.
             </p>
           </div>
-
-          <!-- Como sua doação ajuda -->
           <div class="mb-8">
             <h2 class="text-xl font-bold mb-4 text-white">Como sua doação ajuda:</h2>
             <div class="space-y-3">
@@ -110,93 +104,47 @@
               </div>
             </div>
           </div>
-
-          <!-- Informações de contato -->
           <div class="space-y-2 text-sm text-cta">
             <p><i class="fas fa-map-marker-alt mr-2"></i>Vila Bela da Santíssima Trindade - MT</p>
-            <p><i class="fas fa-envelope mr-2"></i>contato@teresa-quilombola.org.br</p>
-            <p><i class="fas fa-phone mr-2"></i>(65) 9 9999-9999</p>
+            <p><i class="fas fa-envelope mr-2"></i>xxxxx@XXXXXXX</p>
+            <p><i class="fas fa-phone mr-2"></i>(xx) x xxxx-xxxx</p>
           </div>
         </div>
-
-        <!-- Coluna da Direita - QR Code e Doação -->
         <div class="bg-white rounded-2xl p-8 shadow-2xl">
           <div class="text-center mb-6">
             <h2 class="text-2xl font-bold text-gray-900 mb-2">Faça sua Doação</h2>
             <p class="text-gray-600">Escaneie o QR Code ou use as informações bancárias</p>
           </div>
-
-          <!-- QR Code Mock -->
           <div class="flex justify-center mb-6">
             <div class="bg-gray-900 p-4 rounded-xl">
-              <div class="w-48 h-48 bg-white p-4 rounded-lg">
-                <!-- QR Code simulado -->
-                <div class="w-full h-full bg-gray-900 rounded relative overflow-hidden">
-                  <div class="absolute inset-2 bg-white"></div>
-                  <div class="absolute top-4 left-4 w-8 h-8 bg-gray-900"></div>
-                  <div class="absolute top-4 right-4 w-8 h-8 bg-gray-900"></div>
-                  <div class="absolute bottom-4 left-4 w-8 h-8 bg-gray-900"></div>
-                  <div
-                    class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-12 h-12 bg-gray-900 rounded">
-                  </div>
-                  <!-- Padrão QR Code -->
-                  <div class="absolute top-6 left-6 right-6 bottom-6 opacity-30"
-                    style="background-image: repeating-linear-gradient(0deg, black 0px, black 2px, transparent 2px, transparent 4px), repeating-linear-gradient(90deg, black 0px, black 2px, transparent 2px, transparent 4px);">
-                  </div>
-                </div>
+              <div class=" h-full bg-white p-4 rounded-lg">
+                <img src="https://m.media-amazon.com/images/I/31QNELTxbLL.png" class="max-h-24 max-w-24" />
               </div>
             </div>
           </div>
-
-          <!-- Informações bancárias -->
           <div class="bg-gray-50 rounded-lg p-4 mb-6">
             <h3 class="font-bold text-gray-900 mb-3">Dados Bancários</h3>
             <div class="space-y-2 text-sm">
               <div class="flex justify-between">
                 <span class="text-gray-600">Banco:</span>
-                <span class="font-medium">Banco do Brasil</span>
+                <span class="font-medium">XXXXXXXXXX</span>
               </div>
               <div class="flex justify-between">
                 <span class="text-gray-600">Agência:</span>
-                <span class="font-medium">1234-5</span>
+                <span class="font-medium">XXXXX-X</span>
               </div>
               <div class="flex justify-between">
                 <span class="text-gray-600">Conta:</span>
-                <span class="font-medium">67890-1</span>
+                <span class="font-medium">XXXX-X</span>
               </div>
               <div class="flex justify-between">
                 <span class="text-gray-600">PIX:</span>
-                <span class="font-medium">contato@teresa-quilombola.org.br</span>
+                <span class="font-medium">xxxxx@XXXXXXX</span>
               </div>
             </div>
           </div>
-
-          <!-- Valores sugeridos -->
-          <div class="mb-6">
-            <h3 class="font-bold text-gray-900 mb-3">Valores Sugeridos</h3>
-            <div class="grid grid-cols-2 gap-2">
-              <button
-                class="bg-gray-100 hover:bg-primary hover:text-white transition-colors p-3 rounded-lg font-medium text-gray-700">
-                R$ 25,00
-              </button>
-              <button
-                class="bg-gray-100 hover:bg-primary hover:text-white transition-colors p-3 rounded-lg font-medium text-gray-700">
-                R$ 50,00
-              </button>
-              <button
-                class="bg-gray-100 hover:bg-primary hover:text-white transition-colors p-3 rounded-lg font-medium text-gray-700">
-                R$ 100,00
-              </button>
-              <button
-                class="bg-gray-100 hover:bg-primary hover:text-white transition-colors p-3 rounded-lg font-medium text-gray-700">
-                Outro valor
-              </button>
-            </div>
-          </div>
-
-          <!-- CNPJ e transparência -->
           <div class="text-center text-xs text-gray-500 border-t pt-4">
-            <p><strong>CNPJ:</strong> 12.345.678/0001-90</p>
+            <p><strong>CNPJ:</strong> xx.xxx.xxx/xxxx-xx</p>
             <p class="mt-1">Instituição sem fins lucrativos</p>
             <p class="mt-2">
               <i class="fas fa-shield-alt mr-1"></i>
@@ -233,7 +181,7 @@
     window.addEventListener('scroll', () => {
       const header = document.querySelector('.header-glass');
       const scrollPosition = window.scrollY;
-      
+
       if (scrollPosition > 50) {
         header.classList.add('header-scrolled');
       } else {
