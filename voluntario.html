@@ -15,7 +15,6 @@
 
 <body>
   <section class="h-screen bg-white relative">
-    <!-- Header fixo -->
     <div class="fixed top-0 left-0 right-0 z-50 header-glass">
       <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
         <div class="flex justify-between items-center">
@@ -34,12 +33,10 @@
               </a>
             </div>
           </nav>
-          <!-- Menu mobile -->
           <button class="md:hidden text-gray-700" onclick="toggleMobileMenu()">
             <i class="fas fa-bars text-xl"></i>
           </button>
         </div>
-        <!-- Menu mobile expandido -->
         <div id="mobile-menu" class="hidden md:hidden mt-4 pb-4 mobile-menu-glass rounded-lg">
           <div class="flex flex-col space-y-3 pt-4">
             <a href="index.html" class="text-gray-700 hover:text-primary transition-colors font-medium">Início</a>
@@ -51,7 +48,6 @@
       </div>
     </div>
 
-    <!-- Hero Section -->
     <div class="pt-24 pb-8 bg-gradient-to-br from-white via-orange-50 to-yellow-50 h-screen flex items-center">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <h1 class="text-4xl md:text-6xl font-bold mb-6">
@@ -73,30 +69,6 @@
         </div>
       </div>
     </div>
-
-    <!-- Stats Section - Ocultar em telas pequenas para manter 100vh -->
-    <div class="hidden lg:block py-8 bg-white absolute bottom-0 left-0 right-0">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="grid grid-cols-4 gap-8 text-center">
-          <div class="stat-card">
-            <div class="text-2xl font-bold mb-1" style="color: #D88E45;">100+</div>
-            <div class="text-gray-600 text-sm">Anos de História</div>
-          </div>
-          <div class="stat-card">
-            <div class="text-2xl font-bold mb-1" style="color: #D88E45;">50+</div>
-            <div class="text-gray-600 text-sm">Voluntários Ativos</div>
-          </div>
-          <div class="stat-card">
-            <div class="text-2xl font-bold mb-1" style="color: #D88E45;">15</div>
-            <div class="text-gray-600 text-sm">Projetos Anuais</div>
-          </div>
-          <div class="stat-card">
-            <div class="text-2xl font-bold mb-1" style="color: #D88E45;">1000+</div>
-            <div class="text-gray-600 text-sm">Vidas Impactadas</div>
-          </div>
-        </div>
-      </div>
-    </div>
     <div id="application-form" class="py-20 bg-white">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         <div class="text-center mb-12">
@@ -110,7 +82,6 @@
 
         <div class="bg-gray-50 rounded-3xl p-8 md:p-12">
           <form id="volunteerForm" class="space-y-6">
-            <!-- Campo oculto para área selecionada -->
             <input type="hidden" id="selectedArea" name="selectedArea" value="">
 
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -258,7 +229,7 @@
       const data = Object.fromEntries(formData);
 
       // Validação
-      if (!data.name || !data.email || !data.motivation ) {
+      if (!data.name || !data.email || !data.motivation) {
         alert('Por favor, preencha todos os campos obrigatórios.');
         return;
       }

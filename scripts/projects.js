@@ -25,30 +25,6 @@ const projects = [
       "https://img.freepik.com/vetores-premium/abaixo-escuro-com-efeito-grunge_278222-10487.jpg?semt=ais_hybrid&w=740&q=80",
     alt: "Dia da Consciência Negra",
   },
-  {
-    id: "projeto-4",
-    title: "Oficinas de Artesanato",
-    description: "Workshops que ensinam técnicas tradicionais de artesanato quilombola para jovens e adultos.",
-    image:
-      "https://img.freepik.com/vetores-premium/abaixo-escuro-com-efeito-grunge_278222-10487.jpg?semt=ais_hybrid&w=740&q=80",
-    alt: "Oficinas de Artesanato",
-  },
-  {
-    id: "projeto-5",
-    title: "Preservação Histórica",
-    description: "Projeto de documentação e preservação da história oral da comunidade quilombola.",
-    image:
-      "https://img.freepik.com/vetores-premium/abaixo-escuro-com-efeito-grunge_278222-10487.jpg?semt=ais_hybrid&w=740&q=80",
-    alt: "Preservação Histórica",
-  },
-  {
-    id: "projeto-6",
-    title: "Música Tradicional",
-    description: "Resgate e ensino das músicas e instrumentos tradicionais da cultura quilombola.",
-    image:
-      "https://img.freepik.com/vetores-premium/abaixo-escuro-com-efeito-grunge_278222-10487.jpg?semt=ais_hybrid&w=740&q=80",
-    alt: "Música Tradicional",
-  },
 ];
 
 // Função para criar o HTML de um projeto

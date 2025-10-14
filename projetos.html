@@ -14,7 +14,8 @@
   <script src="./scripts/projects.js"></script>
 </head>
 
-<body class="h-screen overflow-hidden">
+<body>
+  <!-- Header fixo -->
   <div class="fixed top-0 left-0 right-0 z-50 header-glass">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4">
       <div class="flex justify-between items-center">
@@ -29,7 +30,7 @@
             class="text-gray-700 hover:text-primary transition-colors font-medium">Voluntários</a>
           <a href="projetos.html" class="text-primary font-semibold">Projetos</a>
           <div class="flex items-center space-x-4">
-            <a href="doacao.html" class="btn-primary px-4 py-2 rounded-full text-sm font-semibold">
+            <a href="doacao.html" class="btn-primary text-white px-4 py-2 rounded-full text-sm font-semibold">
               <i class="fas fa-heart mr-1"></i>Doar
             </a>
           </div>
@@ -50,132 +51,453 @@
     </div>
   </div>
 
-  <section class="h-screen pt-16 pb-2 bg-gradient-to-br from-white via-orange-50 to-yellow-50">
-    <div class="h-full flex flex-col max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="text-center py-6">
-        <h1 class="text-3xl md:text-4xl font-bold mb-3">
-          <span style="color: #5E2404;">Nossos</span>
-          <span class="gradient-text">Projetos</span>
+  <!-- Hero Section -->
+  <section class="hero-section relative flex items-center justify-center overflow-hidden h-screen pt-20">
+    <div class="absolute inset-0 hero-bg">
+      <div class="absolute inset-0 hero-overlay"></div>
+    </div>
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="max-w-4xl mx-auto">
+        <h1 class="text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6">
+          Nossos <span class="gradient-text">Projetos</span>
         </h1>
-        <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+        <p class="text-xl md:text-2xl text-gray-200 mb-8 leading-relaxed">
           Iniciativas que celebram e preservam a rica herança cultural quilombola
         </p>
+        <div class="flex justify-center">
+          <button onclick="scrollToProject(0)"
+            class="btn-primary text-white px-8 py-4 rounded-full font-semibold text-lg shadow-lg flex items-center justify-center space-x-2">
+            <span>Explorar Projetos</span>
+            <i class="fas fa-arrow-down"></i>
+          </button>
+        </div>
       </div>
-      <div class="flex-1 overflow-y-auto py-4">
-        <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 h-fit">
+    </div>
+
+    <!-- Indicador de scroll -->
+    <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white scroll-indicator">
+      <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
+        <div class="w-1 h-3 bg-white/70 rounded-full mt-2 scroll-dot"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projetos - Cada um em uma viewport -->
+  <div id="projects-sections"></div>
+
+  <!-- CTA Final -->
+  <section class="cta-section cta-bg h-screen flex items-center">
+    <div class="w-full">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
+          Faça Parte da Nossa História
+        </h2>
+        <p class="text-xl mb-8 leading-relaxed text-cta">
+          Sua contribuição ajuda a manter vivos estes projetos e preservar nossa herança cultural para as futuras
+          gerações.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="doacao.html"
+            class="btn-cta-primary px-8 py-4 rounded-full font-bold text-lg shadow-lg inline-flex items-center justify-center space-x-2">
+            <i class="fas fa-heart"></i>
+            <span>Apoiar Projetos</span>
+          </a>
+          <a href="voluntario.html"
+            class="btn-cta-secondary px-8 py-4 rounded-full font-bold text-lg inline-flex items-center justify-center space-x-2">
+            <i class="fas fa-users"></i>
+            <span>Ser Voluntário</span>
+          </a>
         </div>
       </div>
     </div>
   </section>
 
-  <style>
-    .project-card {
-      background: white;
-      border-radius: 1rem;
-      padding: 1.5rem;
-      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-      transition: all 0.3s ease;
-      border: 2px solid transparent;
-      height: fit-content;
+  <script>
+    const detailedProjects = [
+      {
+        id: "festanca-congo",
+        title: "Festança do Congo",
+        subtitle: "Tradição Ancestral Viva",
+        description: "A Festança do Congo é uma das mais importantes manifestações culturais da comunidade quilombola de Vila Bela. Esta celebração centenária une dança, música e espiritualidade em uma experiência única que conecta nossa comunidade às suas raízes africanas.",
+        features: [
+          { icon: "fas fa-music", text: "Danças tradicionais com mais de 100 anos de história" },
+          { icon: "fas fa-drum", text: "Instrumentos musicais artesanais feitos pela comunidade" },
+          { icon: "fas fa-praying-hands", text: "Rituais espirituais que fortalecem nossa identidade" },
+          { icon: "fas fa-users", text: "Participação de todas as gerações da comunidade" }
+        ],
+        impact: "Mais de 500 pessoas participam anualmente, mantendo viva uma tradição que resistiu ao tempo e às adversidades históricas.",
+        image: "https://img.freepik.com/vetores-premium/abaixo-escuro-com-efeito-grunge_278222-10487.jpg?semt=ais_hybrid&w=740&q=80",
+        stats: [
+          { number: "500+", label: "Participantes" },
+          { number: "100", label: "Anos de História" },
+          { number: "15", label: "Apresentações" },
+          { number: "3", label: "Gerações" }
+        ]
+      },
+      {
+        id: "festival-praia",
+        title: "Festival de Praia",
+        subtitle: "Encontro Cultural às Margens do Guaporé",
+        description: "O Festival de Praia é um evento que celebra a união entre nossa comunidade e visitantes, promovendo intercâmbio cultural e fortalecendo os laços comunitários em um ambiente natural único às margens do Rio Guaporé.",
+        features: [
+          { icon: "fas fa-theater-masks", text: "Apresentações culturais de diferentes comunidades" },
+          { icon: "fas fa-hammer", text: "Oficinas de artesanato e culinária tradicional" },
+          { icon: "fas fa-swimmer", text: "Atividades aquáticas e esportivas" },
+          { icon: "fas fa-store", text: "Feira de produtos locais e sustentáveis" }
+        ],
+        impact: "Atrai mais de 1.000 visitantes anualmente, gerando renda para 50+ famílias locais e promovendo o turismo cultural responsável.",
+        image: "https://img.freepik.com/vetores-premium/abaixo-escuro-com-efeito-grunge_278222-10487.jpg?semt=ais_hybrid&w=740&q=80",
+      },
+      {
+        id: "consciencia-negra",
+        title: "Dia da Consciência Negra",
+        subtitle: "Celebrando Nossa Identidade",
+        description: "Uma programação especial que valoriza e fortalece a identidade afro-brasileira, promovendo reflexões sobre nossa história, conquistas e desafios, sempre com foco na educação e no orgulho de nossas raízes.",
+        features: [
+          { icon: "fas fa-chalkboard-teacher", text: "Palestras educativas sobre história quilombola" },
+          { icon: "fas fa-camera", text: "Exposições de arte e fotografia" },
+          { icon: "fas fa-masks-theater", text: "Apresentações teatrais e musicais" },
+          { icon: "fas fa-comments", text: "Rodas de conversa com lideranças comunitárias" }
+        ],
+        impact: "Engaja mais de 800 pessoas em atividades educativas, fortalecendo a consciência racial e o orgulho da identidade quilombola.",
+        image: "https://img.freepik.com/vetores-premium/abaixo-escuro-com-efeito-grunge_278222-10487.jpg?semt=ais_hybrid&w=740&q=80",
+      },
+      {
+        id: "oficinas-artesanato",
+        title: "Oficinas de Artesanato",
+        subtitle: "Preservando Técnicas Ancestrais",
+        description: "Workshops que transmitem conhecimentos tradicionais de artesanato quilombola para novas gerações, garantindo a continuidade de técnicas centenárias e criando oportunidades de geração de renda.",
+        features: [
+          { icon: "fas fa-vase", text: "Técnicas tradicionais de cerâmica e olaria" },
+          { icon: "fas fa-cut", text: "Tecelagem e trabalhos com fibras naturais" },
+          { icon: "fas fa-tree", text: "Escultura em madeira e pedra sabão" },
+          { icon: "fas fa-gem", text: "Joalheria e adornos tradicionais" }
+        ],
+        impact: "Capacita 100+ pessoas anualmente, preservando conhecimentos ancestrais e criando alternativas de renda sustentável.",
+        image: "https://img.freepik.com/vetores-premium/abaixo-escuro-com-efeito-grunge_278222-10487.jpg?semt=ais_hybrid&w=740&q=80",
+      },
+      {
+        id: "preservacao-historica",
+        title: "Preservação Histórica",
+        subtitle: "Documentando Nossa Memória",
+        description: "Projeto dedicado à documentação e preservação da história oral da comunidade quilombola, coletando relatos, fotografias e documentos que contam nossa trajetória de resistência e preservação cultural.",
+        features: [
+          { icon: "fas fa-microphone", text: "Entrevistas com anciãos e lideranças históricas" },
+          { icon: "fas fa-file-image", text: "Digitalização de documentos e fotografias antigas" },
+          { icon: "fas fa-database", text: "Criação de arquivo digital comunitário" },
+          { icon: "fas fa-book", text: "Produção de material educativo e cultural" }
+        ],
+        impact: "Já preservou mais de 200 horas de depoimentos e 1.000+ documentos históricos, criando um legado para futuras gerações.",
+        image: "https://img.freepik.com/vetores-premium/abaixo-escuro-com-efeito-grunge_278222-10487.jpg?semt=ais_hybrid&w=740&q=80",
+      },
+      {
+        id: "musica-tradicional",
+        title: "Música Tradicional",
+        subtitle: "Sons que Ecoam Através do Tempo",
+        description: "Iniciativa focada no resgate, ensino e preservação das músicas e instrumentos tradicionais da cultura quilombola, mantendo viva a expressão musical de nossos ancestrais.",
+        features: [
+          { icon: "fas fa-drum", text: "Aulas de instrumentos tradicionais (tambores, berimbau, etc.)" },
+          { icon: "fas fa-users-music", text: "Grupos musicais comunitários" },
+          { icon: "fas fa-record-vinyl", text: "Gravação e registro de músicas ancestrais" },
+          { icon: "fas fa-school", text: "Apresentações em escolas e eventos culturais" }
+        ],
+        impact: "Forma 50+ jovens músicos anualmente e mantém ativo um grupo musical que já realizou 100+ apresentações.",
+        image: "https://img.freepik.com/vetores-premium/abaixo-escuro-com-efeito-grunge_278222-10487.jpg?semt=ais_hybrid&w=740&q=80",
+      }
+    ];
+
+    function createProjectSection(project, index) {
+      const sectionNumber = String(index + 1).padStart(2, '0');
+
+      return `
+        <section class="project-section-modern h-screen relative" id="project-${project.id}">
+          <div class="project-content-container">
+            <div class="section-number">${sectionNumber}</div>
+            
+            <div class="floating-elements">
+              <div class="floating-element"></div>
+              <div class="floating-element"></div>
+              <div class="floating-element"></div>
+            </div>
+
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+              <div class="grid grid-cols-1 xl:grid-cols-12 gap-8 items-center">
+                
+                <!-- Conteúdo Principal -->
+                <div class="xl:col-span-7 space-y-8 content-reveal">
+                  <div class="text-reveal">
+                    <h2 class="text-4xl lg:text-6xl font-black text-gray-900 mb-4 leading-tight">
+                      ${project.title.split(' ').map(word => `<span>${word}</span>`).join(' ')}
+                    </h2>
+                    
+                    <p class="text-2xl text-primary font-semibold mb-6">
+                      ${project.subtitle}
+                    </p>
+                    
+                    <p class="text-lg text-gray-600 leading-relaxed mb-8">
+                      ${project.description}
+                    </p>
+                  </div>
+
+                  <!-- Features -->
+                  <div class="space-y-3">
+                    <h3 class="text-xl font-bold text-gray-900 mb-4">Destaques do Projeto:</h3>
+                    ${project.features.map(feature => `
+                      <div class="feature-item-modern">
+                        <div class="feature-icon-modern">
+                          <i class="${feature.icon}"></i>
+                        </div>
+                        <span class="text-gray-700 font-medium">${feature.text}</span>
+                      </div>
+                    `).join('')}
+                  </div>
+                </div>
+                
+                <!-- Card de Imagem e Impacto -->
+                <div class="xl:col-span-5 content-reveal">
+                  <div class="project-card-modern p-8">
+                    <div class="project-image-modern mb-6">
+                      <img 
+                        src="${project.image}" 
+                        alt="${project.title}"
+                        class="w-full h-80 object-cover transition-transform duration-700"
+                        loading="lazy"
+                      >
+                    </div>
+                    
+                    <div class="impact-card-modern">
+                      <h3 class="text-xl font-bold mb-3 text-white">
+                        <i class="fas fa-chart-line mr-2 text-yellow-300"></i>
+                        Impacto na Comunidade
+                      </h3>
+                      <p class="text-gray-200 leading-relaxed">
+                        ${project.impact}
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      `;
     }
 
-    .project-card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
-      border-color: #D88E45;
+    // Função para renderizar todas as seções de projetos
+    function renderProjectSections() {
+      const container = document.getElementById('projects-sections');
+      if (container) {
+        container.innerHTML = detailedProjects.map((project, index) =>
+          createProjectSection(project, index)
+        ).join('');
+      }
     }
 
-    .project-image {
-      width: 100%;
-      height: 120px;
-      object-fit: cover;
-      border-radius: 0.75rem;
-      margin-bottom: 1rem;
+    // Função para calcular altura do header dinamicamente
+    function getHeaderHeight() {
+      const header = document.querySelector('.header-glass');
+      return header ? header.offsetHeight : 80;
     }
 
-    .project-status {
-      display: inline-block;
-      padding: 0.25rem 0.75rem;
-      border-radius: 9999px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
+    // Ajustar scroll para compensar header
+    function scrollToSection(index) {
+      const allSections = document.querySelectorAll('section');
+      if (index >= 0 && index < allSections.length) {
+        const headerHeight = getHeaderHeight();
+        const targetSection = allSections[index];
+        const offsetTop = targetSection.offsetTop;
+
+        // Para hero section, scroll normalmente
+        if (index === 0) {
+          window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+          });
+        } else {
+          // Para outras seções, compensar altura do header
+          window.scrollTo({
+            top: offsetTop,
+            behavior: 'smooth'
+          });
+        }
+        currentSection = index;
+      }
     }
 
-    .status-ativo {
-      background: linear-gradient(135deg, #10B981, #34D399);
-      color: white;
+    // Função para scroll suave para projeto específico
+    function scrollToProject(index) {
+      const projectSections = document.querySelectorAll('[id^="project-"]');
+      if (projectSections[index]) {
+        const headerHeight = getHeaderHeight();
+        const targetTop = projectSections[index].offsetTop;
+
+        window.scrollTo({
+          top: targetTop,
+          behavior: 'smooth'
+        });
+      }
     }
 
-    .status-planejamento {
-      background: linear-gradient(135deg, #F59E0B, #FBBF24);
-      color: white;
+    // Toggle mobile menu
+    function toggleMobileMenu() {
+      const mobileMenu = document.getElementById('mobile-menu');
+      mobileMenu.classList.toggle('hidden');
     }
 
-    .status-concluido {
-      background: linear-gradient(135deg, #6B7280, #9CA3AF);
-      color: white;
+    // Scroll controlado por seções
+    let isScrolling = false;
+    let currentSection = 0;
+
+    function getCurrentSection() {
+      const allSections = document.querySelectorAll('section');
+      const scrollPosition = window.scrollY;
+      const windowHeight = window.innerHeight;
+
+      for (let i = 0; i < allSections.length; i++) {
+        const section = allSections[i];
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+
+        if (scrollPosition >= sectionTop - windowHeight / 2 &&
+          scrollPosition < sectionTop + sectionHeight - windowHeight / 2) {
+          return i;
+        }
+      }
+      return 0;
     }
 
-    .filter-btn {
-      color: #6B7280;
-      background: transparent;
+    // Ajustar position do número da seção com base no header
+    function adjustSectionNumbers() {
+      const headerHeight = getHeaderHeight();
+      const sectionNumbers = document.querySelectorAll('.section-number');
+
+      sectionNumbers.forEach(number => {
+        number.style.top = `${headerHeight + 32}px`; // 32px adicional de margem
+      });
     }
 
-    .filter-btn:hover {
-      color: #D88E45;
-      background: rgba(216, 142, 69, 0.1);
-    }
+    // Inicialização
+    document.addEventListener('DOMContentLoaded', function () {
+      renderProjectSections();
 
-    .filter-btn.active {
-      background: linear-gradient(135deg, #D88E45, #F09134);
-      color: white;
-    }
+      // Ajustar posições após renderização
+      setTimeout(() => {
+        adjustSectionNumbers();
+        initModernAnimations();
+      }, 100);
 
-    .project-category {
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin-bottom: 0.5rem;
-    }
+      // Smooth scroll behavior
+      document.documentElement.style.scrollBehavior = 'smooth';
 
-    .category-cultural {
-      color: #D88E45;
-    }
+      // Reajustar ao redimensionar janela
+      window.addEventListener('resize', adjustSectionNumbers);
+    });
 
-    .category-educacional {
-      color: #10B981;
-    }
+    // Event listeners
+    window.addEventListener('wheel', (e) => {
+      e.preventDefault();
 
-    .category-preservacao {
-      color: #8B5CF6;
-    }
+      if (isScrolling) return;
 
-    .category-social {
-      color: #EF4444;
-    }
+      isScrolling = true;
+      currentSection = getCurrentSection();
+      const allSections = document.querySelectorAll('section');
 
-    /* Scrollbar customizada */
-    .overflow-y-auto::-webkit-scrollbar {
-      width: 6px;
-    }
+      if (e.deltaY > 0) {
+        if (currentSection < allSections.length - 1) {
+          scrollToSection(currentSection + 1);
+        }
+      } else {
+        if (currentSection > 0) {
+          scrollToSection(currentSection - 1);
+        }
+      }
 
-    .overflow-y-auto::-webkit-scrollbar-track {
-      background: rgba(0, 0, 0, 0.1);
-      border-radius: 3px;
-    }
+      setTimeout(() => {
+        isScrolling = false;
+      }, 1000);
+    }, { passive: false });
 
-    .overflow-y-auto::-webkit-scrollbar-thumb {
-      background: #D88E45;
-      border-radius: 3px;
-    }
+    window.addEventListener('keydown', (e) => {
+      if (isScrolling) return;
 
-    .overflow-y-auto::-webkit-scrollbar-thumb:hover {
-      background: #A6490C;
+      currentSection = getCurrentSection();
+      const allSections = document.querySelectorAll('section');
+
+      if (e.key === 'ArrowDown' || e.key === 'PageDown') {
+        e.preventDefault();
+        isScrolling = true;
+        if (currentSection < allSections.length - 1) {
+          scrollToSection(currentSection + 1);
+        }
+        setTimeout(() => { isScrolling = false; }, 1000);
+      } else if (e.key === 'ArrowUp' || e.key === 'PageUp') {
+        e.preventDefault();
+        isScrolling = true;
+        if (currentSection > 0) {
+          scrollToSection(currentSection - 1);
+        }
+        setTimeout(() => { isScrolling = false; }, 1000);
+      }
+    });
+
+    // Animações e interações modernas
+    function initModernAnimations() {
+      // Intersection Observer para animações de entrada
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+
+            // Animar texto palavra por palavra
+            const textReveal = entry.target.querySelector('.text-reveal');
+            if (textReveal) {
+              const spans = textReveal.querySelectorAll('span');
+              spans.forEach((span, index) => {
+                span.style.animationDelay = `${index * 0.1}s`;
+                span.style.animationFillMode = 'forwards';
+              });
+            }
+          }
+        });
+      }, observerOptions);
+
+      // Observar elementos após renderização
+      setTimeout(() => {
+        document.querySelectorAll('.content-reveal').forEach((el) => {
+          observer.observe(el);
+        });
+      }, 100);
+
+      // Parallax scroll effect
+      window.addEventListener('scroll', () => {
+        const scrolled = window.pageYOffset;
+        const parallaxElements = document.querySelectorAll('.floating-element');
+
+        parallaxElements.forEach((element, index) => {
+          const speed = (index + 1) * 0.3;
+          const yPos = -(scrolled * speed);
+          element.style.transform = `translateY(${yPos}px) rotate(${scrolled * 0.1}deg)`;
+        });
+      });
+
+      // Hover effects para cards
+      document.querySelectorAll('.project-card-modern').forEach(card => {
+        card.addEventListener('mouseenter', () => {
+          card.style.transform = 'translateY(-8px) scale(1.02)';
+        });
+
+        card.addEventListener('mouseleave', () => {
+          card.style.transform = 'translateY(0) scale(1)';
+        });
+      });
     }
-  </style>
+  </script>
 </body>
 
 </html>
