@@ -12,6 +12,7 @@
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link rel="stylesheet" href="./styles/index.css">
   <script src="./scripts/projects.js"></script>
+  <script src="./scripts/discography.js"></script>
   <script src="./scripts/news.js"></script>
 </head>
 
@@ -109,6 +110,124 @@
       </div>
     </div>
   </section>
+
+  <!-- Nova seção de Discografia -->
+  <section class="discography-section h-screen flex items-center justify-center relative overflow-hidden">
+    <div class="absolute inset-0 bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-100"></div>
+
+    <!-- Elementos flutuantes decorativos -->
+    <div class="absolute top-0 left-0 w-full h-full pointer-events-none">
+      <div class="floating-music-note absolute top-20 left-10 w-6 h-6 text-primary opacity-30">
+        <i class="fas fa-music"></i>
+      </div>
+      <div class="floating-music-note absolute top-1/3 right-20 w-8 h-8 text-secondary opacity-40">
+        <i class="fas fa-guitar"></i>
+      </div>
+      <div class="floating-music-note absolute bottom-32 left-1/4 w-5 h-5 text-accent opacity-35">
+        <i class="fas fa-drum"></i>
+      </div>
+    </div>
+
+    <div class="relative z-10 w-full max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+          Nossa <span class="gradient-text">Discografia</span>
+        </h2>
+        <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+          Sons que ecoam através do tempo, preservando nossa herança musical quilombola
+        </p>
+      </div>
+
+      <div class="relative max-w-4xl mx-auto">
+        <!-- Carrossel Container -->
+        <div class="music-carousel bg-white rounded-3xl shadow-2xl overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-2 h-[500px]">
+
+            <!-- Lado da Imagem -->
+            <div class="relative bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+              <div class="absolute inset-0 bg-black/20"></div>
+              <div class="relative z-10 text-center text-white p-8">
+                <div class="w-48 h-48 mx-auto mb-6 rounded-full overflow-hidden shadow-2xl ring-4 ring-white/30">
+                  <img src="./assets/discografia/Aurora.jpeg" alt="Aurora - Discografia Quilombola"
+                    class="w-full h-full object-cover"
+                    onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+                  <div class="w-full h-full bg-primary/80 hidden items-center justify-center">
+                    <i class="fas fa-music text-6xl text-white/70"></i>
+                  </div>
+                </div>
+                <h3 class="text-2xl font-bold mb-2">Aurora</h3>
+                <p class="text-white/90">Coletânea Musical Quilombola</p>
+              </div>
+
+              <!-- Overlay decorativo -->
+              <div class="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-black/30 to-transparent"></div>
+            </div>
+
+            <!-- Lado do Player -->
+            <div class="flex flex-col justify-center p-8 bg-white">
+              <div class="mb-8">
+                <h4 id="current-track-title" class="text-2xl font-bold text-gray-900 mb-2 transition-all duration-300">
+                  Carregando...
+                </h4>
+                <p id="current-track-artist" class="text-gray-600 mb-4">
+                  Tradição Quilombola
+                </p>
+                <p id="current-track-description" class="text-sm text-gray-500 leading-relaxed">
+                  Carregando descrição...
+                </p>
+              </div>
+
+              <!-- Player de Áudio -->
+              <div class="audio-player-container mb-4">
+                <audio id="audio-player" class="w-full" controls preload="metadata" style="height: 40px;">
+                  Seu navegador não suporta o elemento de áudio.
+                </audio>
+              </div>
+
+              <!-- Controles do Carrossel -->
+              <div class="flex items-center justify-between mt-6">
+                <button id="prev-track"
+                  class="carousel-btn flex items-center justify-center w-12 h-12 bg-gray-100 hover:bg-primary hover:text-white rounded-full transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50">
+                  <i class="fas fa-chevron-left"></i>
+                </button>
+
+                <div class="flex space-x-2">
+                  <div id="track-indicators" class="flex space-x-2">
+                    <!-- Indicadores serão gerados dinamicamente -->
+                  </div>
+                </div>
+
+                <button id="next-track"
+                  class="carousel-btn flex items-center justify-center w-12 h-12 bg-gray-100 hover:bg-primary hover:text-white rounded-full transition-all duration-300 transform hover:scale-110 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50">
+                  <i class="fas fa-chevron-right"></i>
+                </button>
+              </div>
+
+              <!-- Informações da faixa atual -->
+              <div class="mt-6 text-center">
+                <p class="text-sm text-gray-500">
+                  Faixa <span id="current-track-number">1</span> de <span id="total-tracks">5</span>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Navegação adicional para mobile -->
+        <div class="lg:hidden mt-6 flex justify-center space-x-4">
+          <button id="mobile-prev"
+            class="carousel-btn bg-white shadow-lg w-14 h-14 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50">
+            <i class="fas fa-chevron-left text-lg"></i>
+          </button>
+          <button id="mobile-next"
+            class="carousel-btn bg-white shadow-lg w-14 h-14 rounded-full flex items-center justify-center text-primary hover:bg-primary hover:text-white transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-opacity-50">
+            <i class="fas fa-chevron-right text-lg"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <section class="news-cta-section h-screen">
     <div class="cta-content cta-bg">
       <div class="w-full">
@@ -254,6 +373,11 @@
 
       if (window.NewsManager) {
         window.NewsManager.loadNews();
+      }
+
+      // Inicializar discografia
+      if (window.DiscographyManager) {
+        window.DiscographyManager.init();
       }
     });
   </script>
