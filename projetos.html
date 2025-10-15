@@ -29,11 +29,6 @@
           <a href="voluntario.html"
             class="text-gray-700 hover:text-primary transition-colors font-medium">Voluntários</a>
           <a href="projetos.html" class="text-primary font-semibold">Projetos</a>
-          <div class="flex items-center space-x-4">
-            <a href="doacao.html" class="btn-primary text-white px-4 py-2 rounded-full text-sm font-semibold">
-              <i class="fas fa-heart mr-1"></i>Doar
-            </a>
-          </div>
         </nav>
         <button class="md:hidden text-gray-700" onclick="toggleMobileMenu()">
           <i class="fas fa-bars text-xl"></i>
@@ -51,7 +46,6 @@
     </div>
   </div>
 
-  <!-- Hero Section -->
   <section class="hero-section relative flex items-center justify-center overflow-hidden h-screen pt-20">
     <div class="absolute inset-0 hero-bg">
       <div class="absolute inset-0 hero-overlay"></div>
@@ -74,7 +68,6 @@
       </div>
     </div>
 
-    <!-- Indicador de scroll -->
     <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white scroll-indicator">
       <div class="w-6 h-10 border-2 border-white/50 rounded-full flex justify-center">
         <div class="w-1 h-3 bg-white/70 rounded-full mt-2 scroll-dot"></div>
@@ -82,35 +75,7 @@
     </div>
   </section>
 
-  <!-- Projetos - Cada um em uma viewport -->
   <div id="projects-sections"></div>
-
-  <!-- CTA Final -->
-  <section class="cta-section cta-bg h-screen flex items-center">
-    <div class="w-full">
-      <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 class="text-3xl md:text-4xl font-bold text-white mb-6">
-          Faça Parte da Nossa História
-        </h2>
-        <p class="text-xl mb-8 leading-relaxed text-cta">
-          Sua contribuição ajuda a manter vivos estes projetos e preservar nossa herança cultural para as futuras
-          gerações.
-        </p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="doacao.html"
-            class="btn-cta-primary px-8 py-4 rounded-full font-bold text-lg shadow-lg inline-flex items-center justify-center space-x-2">
-            <i class="fas fa-heart"></i>
-            <span>Apoiar Projetos</span>
-          </a>
-          <a href="voluntario.html"
-            class="btn-cta-secondary px-8 py-4 rounded-full font-bold text-lg inline-flex items-center justify-center space-x-2">
-            <i class="fas fa-users"></i>
-            <span>Ser Voluntário</span>
-          </a>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <script>
     const detailedProjects = [
@@ -162,48 +127,6 @@
         impact: "Engaja mais de 800 pessoas em atividades educativas, fortalecendo a consciência racial e o orgulho da identidade quilombola.",
         image: "https://img.freepik.com/vetores-premium/abaixo-escuro-com-efeito-grunge_278222-10487.jpg?semt=ais_hybrid&w=740&q=80",
       },
-      {
-        id: "oficinas-artesanato",
-        title: "Oficinas de Artesanato",
-        subtitle: "Preservando Técnicas Ancestrais",
-        description: "Workshops que transmitem conhecimentos tradicionais de artesanato quilombola para novas gerações, garantindo a continuidade de técnicas centenárias e criando oportunidades de geração de renda.",
-        features: [
-          { icon: "fas fa-vase", text: "Técnicas tradicionais de cerâmica e olaria" },
-          { icon: "fas fa-cut", text: "Tecelagem e trabalhos com fibras naturais" },
-          { icon: "fas fa-tree", text: "Escultura em madeira e pedra sabão" },
-          { icon: "fas fa-gem", text: "Joalheria e adornos tradicionais" }
-        ],
-        impact: "Capacita 100+ pessoas anualmente, preservando conhecimentos ancestrais e criando alternativas de renda sustentável.",
-        image: "https://img.freepik.com/vetores-premium/abaixo-escuro-com-efeito-grunge_278222-10487.jpg?semt=ais_hybrid&w=740&q=80",
-      },
-      {
-        id: "preservacao-historica",
-        title: "Preservação Histórica",
-        subtitle: "Documentando Nossa Memória",
-        description: "Projeto dedicado à documentação e preservação da história oral da comunidade quilombola, coletando relatos, fotografias e documentos que contam nossa trajetória de resistência e preservação cultural.",
-        features: [
-          { icon: "fas fa-microphone", text: "Entrevistas com anciãos e lideranças históricas" },
-          { icon: "fas fa-file-image", text: "Digitalização de documentos e fotografias antigas" },
-          { icon: "fas fa-database", text: "Criação de arquivo digital comunitário" },
-          { icon: "fas fa-book", text: "Produção de material educativo e cultural" }
-        ],
-        impact: "Já preservou mais de 200 horas de depoimentos e 1.000+ documentos históricos, criando um legado para futuras gerações.",
-        image: "https://img.freepik.com/vetores-premium/abaixo-escuro-com-efeito-grunge_278222-10487.jpg?semt=ais_hybrid&w=740&q=80",
-      },
-      {
-        id: "musica-tradicional",
-        title: "Música Tradicional",
-        subtitle: "Sons que Ecoam Através do Tempo",
-        description: "Iniciativa focada no resgate, ensino e preservação das músicas e instrumentos tradicionais da cultura quilombola, mantendo viva a expressão musical de nossos ancestrais.",
-        features: [
-          { icon: "fas fa-drum", text: "Aulas de instrumentos tradicionais (tambores, berimbau, etc.)" },
-          { icon: "fas fa-users-music", text: "Grupos musicais comunitários" },
-          { icon: "fas fa-record-vinyl", text: "Gravação e registro de músicas ancestrais" },
-          { icon: "fas fa-school", text: "Apresentações em escolas e eventos culturais" }
-        ],
-        impact: "Forma 50+ jovens músicos anualmente e mantém ativo um grupo musical que já realizou 100+ apresentações.",
-        image: "https://img.freepik.com/vetores-premium/abaixo-escuro-com-efeito-grunge_278222-10487.jpg?semt=ais_hybrid&w=740&q=80",
-      }
     ];
 
     function createProjectSection(project, index) {

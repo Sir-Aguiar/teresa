@@ -2,7 +2,7 @@ const discographyTracks = [
   {
     id: "track-1",
     title: "Poema para Vila Bela",
-    artist: "Quilombo Aurora do Quariterê,",
+    artist: "Quilombo Aurora do Quariterê",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
     audioFile: "./assets/discografia/00 - Poema para Vila Bela",
@@ -10,7 +10,7 @@ const discographyTracks = [
   {
     id: "track-2",
     title: "A rosa",
-    artist: "Quilombo Aurora do Quariterê,",
+    artist: "Quilombo Aurora do Quariterê",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
     audioFile: "./assets/discografia/01 - A rosa",
@@ -18,7 +18,7 @@ const discographyTracks = [
   {
     id: "track-3",
     title: "Nunca te darei perdão",
-    artist: "Quilombo Aurora do Quariterê,",
+    artist: "Quilombo Aurora do Quariterê",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse.",
     audioFile: "./assets/discografia/02 - Nunca te darei perdão",
@@ -26,7 +26,7 @@ const discographyTracks = [
   {
     id: "track-4",
     title: "Campo Verde Serenado",
-    artist: "Quilombo Aurora do Quariterê,",
+    artist: "Quilombo Aurora do Quariterê",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa.",
     audioFile: "./assets/discografia/03- Campo Verde Serenado",
@@ -34,7 +34,7 @@ const discographyTracks = [
   {
     id: "track-5",
     title: "Ranchinho",
-    artist: "Quilombo Aurora do Quariterê,",
+    artist: "Quilombo Aurora do Quariterê",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
     audioFile: "./assets/discografia/04 - Ranchinho",
@@ -42,7 +42,7 @@ const discographyTracks = [
   {
     id: "track-6",
     title: "Ó de casa",
-    artist: "Quilombo Aurora do Quariterê,",
+    artist: "Quilombo Aurora do Quariterê",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At vero eos et accusamus et iusto odio dignissimos ducimus.",
     audioFile: "./assets/discografia/05 - Mulher ingrata",
@@ -50,7 +50,7 @@ const discographyTracks = [
   {
     id: "track-7",
     title: "Pássaro Preto",
-    artist: "Quilombo Aurora do Quariterê,",
+    artist: "Quilombo Aurora do Quariterê",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Temporibus autem quibusdam et aut officiis debitis aut rerum.",
     audioFile: "./assets/discografia/06 - Lembrança de mim",
@@ -58,7 +58,7 @@ const discographyTracks = [
   {
     id: "track-8",
     title: "Lamento Sertanejo",
-    artist: "Quilombo Aurora do Quariterê,",
+    artist: "Quilombo Aurora do Quariterê",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam libero tempore, cum soluta nobis est eligendi optio cumque.",
     audioFile: "./assets/discografia/07 - Mora na terra quem pode",
@@ -66,7 +66,7 @@ const discographyTracks = [
   {
     id: "track-9",
     title: "Canção do Carreiro",
-    artist: "Quilombo Aurora do Quariterê,",
+    artist: "Quilombo Aurora do Quariterê",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque porro quisquam est, qui dolorem ipsum quia dolor sit.",
     audioFile: "./assets/discografia/08 - Na beira da praia",
@@ -74,7 +74,7 @@ const discographyTracks = [
   {
     id: "track-10",
     title: "Rasqueado Mineiro",
-    artist: "Quilombo Aurora do Quariterê,",
+    artist: "Quilombo Aurora do Quariterê",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minima veniam, quis nostrum exercitationem ullam.",
     audioFile: "./assets/discografia/09 - Vou nadar",
@@ -82,7 +82,7 @@ const discographyTracks = [
   {
     id: "track-11",
     title: "Beijinho Doce",
-    artist: "Quilombo Aurora do Quariterê,",
+    artist: "Quilombo Aurora do Quariterê",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis autem vel eum iure reprehenderit qui in ea voluptate velit.",
     audioFile: "./assets/discografia/10 - Vela acesa",
@@ -90,7 +90,7 @@ const discographyTracks = [
   {
     id: "track-12",
     title: "Viola Cabocla",
-    artist: "Quilombo Aurora do Quariterê,",
+    artist: "Quilombo Aurora do Quariterê",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et harum quidem rerum facilis est et expedita distinctio.",
     audioFile: "./assets/discografia/11 - Passarinho",
@@ -98,7 +98,7 @@ const discographyTracks = [
   {
     id: "track-13",
     title: "Cabocla Teresa",
-    artist: "Quilombo Aurora do Quariterê,",
+    artist: "Quilombo Aurora do Quariterê",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam libero tempore, cum soluta nobis est eligendi optio.",
     audioFile: "./assets/discografia/12 - As onze horas da noite",
@@ -106,7 +106,7 @@ const discographyTracks = [
   {
     id: "track-14",
     title: "Cuiabá Formosa",
-    artist: "Quilombo Aurora do Quariterê,",
+    artist: "Quilombo Aurora do Quariterê",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus.",
     audioFile: "./assets/discografia/14 - Onde está você",
@@ -114,7 +114,7 @@ const discographyTracks = [
   {
     id: "track-15",
     title: "O Sabiá e a Grola",
-    artist: "Quilombo Aurora do Quariterê,",
+    artist: "Quilombo Aurora do Quariterê",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Itaque earum rerum hic tenetur a sapiente delectus ut aut.",
     audioFile: "./assets/discografia/15 - As folhas da malva gira",
@@ -122,7 +122,7 @@ const discographyTracks = [
   {
     id: "track-16",
     title: "Beijinho Doce",
-    artist: "Quilombo Aurora do Quariterê,",
+    artist: "Quilombo Aurora do Quariterê",
     description:
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
     audioFile: "./assets/discografia/Encerramento",
