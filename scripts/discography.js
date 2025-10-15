@@ -3,113 +3,129 @@ const discographyTracks = [
     id: "track-1",
     title: "Poema para Vila Bela",
     artist: "Grupo Aurora",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-    audioFile: "./assets/discografia/00 - Poema para Vila Bela.mp3",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+    audioFile: "./assets/discografia/00 - Poema para Vila Bela",
   },
   {
     id: "track-2",
     title: "A rosa",
     artist: "Grupo Aurora",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
-    audioFile: "./assets/discografia/01 - A rosa.mp3",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minim veniam, quis nostrud exercitation ullamco.",
+    audioFile: "./assets/discografia/01 - A rosa",
   },
   {
     id: "track-3",
     title: "Nunca te darei perdão",
     artist: "Grupo Aurora",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse.",
-    audioFile: "./assets/discografia/02 - Nunca te darei perdão.mp3",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis aute irure dolor in reprehenderit in voluptate velit esse.",
+    audioFile: "./assets/discografia/02 - Nunca te darei perdão",
   },
   {
     id: "track-4",
     title: "Campo Verde Serenado",
     artist: "Grupo Aurora",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa.",
-    audioFile: "./assets/discografia/03- Campo Verde Serenado.mp3",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Excepteur sint occaecat cupidatat non proident, sunt in culpa.",
+    audioFile: "./assets/discografia/03- Campo Verde Serenado",
   },
   {
     id: "track-5",
     title: "Ranchinho",
     artist: "Grupo Aurora",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
-    audioFile: "./assets/discografia/04 - Ranchinho.mp3",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem.",
+    audioFile: "./assets/discografia/04 - Ranchinho",
   },
   {
     id: "track-6",
     title: "Ó de casa",
     artist: "Grupo Aurora",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At vero eos et accusamus et iusto odio dignissimos ducimus.",
-    audioFile: "./assets/discografia/05 - Ó de casa.mp3",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. At vero eos et accusamus et iusto odio dignissimos ducimus.",
+    audioFile: "./assets/discografia/05 - Mulher ingrata",
   },
   {
     id: "track-7",
     title: "Pássaro Preto",
     artist: "Grupo Aurora",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Temporibus autem quibusdam et aut officiis debitis aut rerum.",
-    audioFile: "./assets/discografia/06 - Pássaro Preto.mp3",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Temporibus autem quibusdam et aut officiis debitis aut rerum.",
+    audioFile: "./assets/discografia/06 - Lembrança de mim",
   },
   {
     id: "track-8",
     title: "Lamento Sertanejo",
     artist: "Grupo Aurora",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam libero tempore, cum soluta nobis est eligendi optio cumque.",
-    audioFile: "./assets/discografia/07 - Lamento Sertanejo.mp3",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam libero tempore, cum soluta nobis est eligendi optio cumque.",
+    audioFile: "./assets/discografia/07 - Mora na terra quem pode",
   },
   {
     id: "track-9",
     title: "Canção do Carreiro",
     artist: "Grupo Aurora",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque porro quisquam est, qui dolorem ipsum quia dolor sit.",
-    audioFile: "./assets/discografia/08 - Canção do Carreiro.mp3",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Neque porro quisquam est, qui dolorem ipsum quia dolor sit.",
+    audioFile: "./assets/discografia/08 - Na beira da praia",
   },
   {
     id: "track-10",
     title: "Rasqueado Mineiro",
     artist: "Grupo Aurora",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minima veniam, quis nostrum exercitationem ullam.",
-    audioFile: "./assets/discografia/09 - Rasqueado Mineiro.mp3",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut enim ad minima veniam, quis nostrum exercitationem ullam.",
+    audioFile: "./assets/discografia/09 - Vou nadar",
   },
   {
     id: "track-11",
     title: "Beijinho Doce",
     artist: "Grupo Aurora",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis autem vel eum iure reprehenderit qui in ea voluptate velit.",
-    audioFile: "./assets/discografia/10 - Beijinho Doce.mp3",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quis autem vel eum iure reprehenderit qui in ea voluptate velit.",
+    audioFile: "./assets/discografia/10 - Vela acesa",
   },
   {
     id: "track-12",
     title: "Viola Cabocla",
     artist: "Grupo Aurora",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et harum quidem rerum facilis est et expedita distinctio.",
-    audioFile: "./assets/discografia/11 - Viola Cabocla.mp3",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Et harum quidem rerum facilis est et expedita distinctio.",
+    audioFile: "./assets/discografia/11 - Passarinho",
   },
   {
     id: "track-13",
     title: "Cabocla Teresa",
     artist: "Grupo Aurora",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam libero tempore, cum soluta nobis est eligendi optio.",
-    audioFile: "./assets/discografia/12 - Cabocla Teresa.mp3",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam libero tempore, cum soluta nobis est eligendi optio.",
+    audioFile: "./assets/discografia/12 - As onze horas da noite",
   },
   {
     id: "track-14",
     title: "Cuiabá Formosa",
     artist: "Grupo Aurora",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus.",
-    audioFile: "./assets/discografia/13 - Cuiabá Formosa.mp3",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus.",
+    audioFile: "./assets/discografia/14 - Onde está você",
   },
   {
     id: "track-15",
     title: "O Sabiá e a Grola",
     artist: "Grupo Aurora",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Itaque earum rerum hic tenetur a sapiente delectus ut aut.",
-    audioFile: "./assets/discografia/14 - O Sabiá e a Grola.mp3",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Itaque earum rerum hic tenetur a sapiente delectus ut aut.",
+    audioFile: "./assets/discografia/15 - As folhas da malva gira",
   },
   {
     id: "track-16",
     title: "Beijinho Doce",
     artist: "Grupo Aurora",
-    description: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
-    audioFile: "./assets/discografia/15 - Beijinho Doce.mp3",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium.",
+    audioFile: "./assets/discografia/Encerramento",
   },
 ];
 
@@ -272,7 +288,7 @@ class DiscographyCarousel {
     this.audioPlayer.currentTime = 0;
 
     // Definir nova fonte diretamente no elemento audio
-    this.audioPlayer.src = track.audioFile;
+    this.audioPlayer.src = track.audioFile + ".mp3";
 
     // Forçar reload do player
     this.audioPlayer.load();
@@ -368,7 +384,7 @@ class DiscographyCarousel {
       console.log(`Arquivo: ${track.audioFile}`);
 
       try {
-        const response = await fetch(track.audioFile, { method: "HEAD" });
+        const response = await fetch(`${track.audioFile}`, { method: "HEAD" });
         console.log(`Status: ${response.ok ? "✅ OK" : "❌ Erro"} (${response.status})`);
       } catch (error) {
         console.log(`Status: ❌ Erro de rede`);
