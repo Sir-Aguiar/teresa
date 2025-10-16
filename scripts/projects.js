@@ -4,7 +4,7 @@ const projects = [
     id: "projeto-1",
     title: "Festança do Congo",
     description:
-      "Tradicional manifestação cultural que celebra a herança africana com danças, músicas e rituais ancestrais.",
+      "Testemunho vivo da resistência afro-brasileira em Vila Bela da Santíssima Trindade. Celebração anual em julho que une rituais católicos e tradições africanas através das históricas Danças do Congo e do Chorado.",
     image:
       "https://img.freepik.com/vetores-premium/abaixo-escuro-com-efeito-grunge_278222-10487.jpg?semt=ais_hybrid&w=740&q=80",
     alt: "Festança do Congo",
@@ -12,7 +12,8 @@ const projects = [
   {
     id: "projeto-2",
     title: "Festival de Praia",
-    description: "Evento que une comunidade e visitantes em celebração da cultura local às margens do Rio Guaporé.",
+    description:
+      "Anteriormente Festival de Pesca, este evento anual (setembro-outubro) movimenta o turismo e cultura local. O Instituto apoia grupos culturais sem financiamento municipal direto.",
     image:
       "https://img.freepik.com/vetores-premium/abaixo-escuro-com-efeito-grunge_278222-10487.jpg?semt=ais_hybrid&w=740&q=80",
     alt: "Festival de Praia",
@@ -20,7 +21,8 @@ const projects = [
   {
     id: "projeto-3",
     title: "Dia da Consciência Negra",
-    description: "Programação especial que valoriza a identidade afro-brasileira e a história quilombola da região.",
+    description:
+      "Evento anual em 20 de novembro para marcar a data com reflexão e valorização da cultura afro-brasileira. O Instituto organiza palestras com personalidades relevantes e ações culturais diversas.",
     image:
       "https://img.freepik.com/vetores-premium/abaixo-escuro-com-efeito-grunge_278222-10487.jpg?semt=ais_hybrid&w=740&q=80",
     alt: "Dia da Consciência Negra",

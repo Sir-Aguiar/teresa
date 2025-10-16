@@ -46,11 +46,6 @@
 
   <section class="h-full cta-bg flex relative py-9">
     <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-
-      <div class="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
-        <img src="./assets/logo.svg" alt="Logo Teresa" class="w-64 h-64 object-contain">
-      </div>
-
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
         <div class="text-white">
           <div class="mb-8">
@@ -112,7 +107,8 @@
           <div class="flex justify-center mb-6">
             <div class="bg-gray-900 p-4 rounded-xl">
               <div class=" h-full bg-white p-4 rounded-lg">
-                <img src="https://codigosdebarrasbrasil.com.br/wp-content/uploads/2019/09/codigo_qr-300x300.png" class="max-h-24 max-w-24" />
+                <img src="https://codigosdebarrasbrasil.com.br/wp-content/uploads/2019/09/codigo_qr-300x300.png"
+                  class="max-h-24 max-w-24" />
               </div>
             </div>
           </div>
@@ -137,7 +133,6 @@
     </div>
   </section>
 
-  <!-- CSS customizado inline para valores -->
   <style>
     .bg-primary {
       background: linear-gradient(to right, #D88E45, #F09134);
@@ -158,7 +153,6 @@
       mobileMenu.classList.toggle('hidden');
     }
 
-    // Melhorar transparência da navbar baseada no scroll
     window.addEventListener('scroll', () => {
       const header = document.querySelector('.header-glass');
       const scrollPosition = window.scrollY;
@@ -168,58 +162,6 @@
       } else {
         header.classList.remove('header-scrolled');
       }
-    });
-
-    // Smooth scrolling para links internos
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-      anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-          targetElement.scrollIntoView({
-            behavior: 'smooth',
-            block: 'start'
-          });
-        }
-      });
-    });
-
-    // Interatividade dos botões de valor
-    document.querySelectorAll('button').forEach(button => {
-      button.addEventListener('click', function () {
-        // Remover seleção anterior
-        document.querySelectorAll('button').forEach(btn => {
-          btn.classList.remove('bg-primary', 'text-white');
-          btn.classList.add('bg-gray-100', 'text-gray-700');
-        });
-
-        // Adicionar seleção atual
-        this.classList.remove('bg-gray-100', 'text-gray-700');
-        this.classList.add('bg-primary', 'text-white');
-
-        const value = this.textContent.trim();
-        if (value === 'Outro valor') {
-          const customValue = prompt('Digite o valor da doação (apenas números):');
-          if (customValue && !isNaN(customValue)) {
-            this.textContent = `R$ ${parseFloat(customValue).toFixed(2).replace('.', ',')}`;
-          }
-        }
-      });
-    });
-
-    // Animação de entrada
-    window.addEventListener('load', () => {
-      const elements = document.querySelectorAll('.grid > div');
-      elements.forEach((el, index) => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        setTimeout(() => {
-          el.style.transition = 'all 0.6s ease';
-          el.style.opacity = '1';
-          el.style.transform = 'translateY(0)';
-        }, index * 300);
-      });
     });
   </script>
 </body>

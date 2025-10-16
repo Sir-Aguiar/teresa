@@ -42,7 +42,6 @@
     </div>
   </div>
 
-  <!-- Seção principal com layout horizontal -->
   <section class="h-screen bg-gradient-to-br from-white via-orange-50 to-yellow-50 pt-20">
     <div class="h-full max-w-[1320px] mx-auto px-4 sm:px-6 lg:px-8">
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 h-full items-center">
@@ -171,14 +170,12 @@
   </section>
 
   <script>
-    // Manipulação do formulário
     document.getElementById('volunteerForm').addEventListener('submit', function (e) {
       e.preventDefault();
 
       const formData = new FormData(this);
       const data = Object.fromEntries(formData);
 
-      // Validação
       if (!data.name || !data.email || !data.motivation || !data.age) {
         alert('Por favor, preencha todos os campos obrigatórios.');
         return;
@@ -206,7 +203,6 @@
       mobileMenu.classList.toggle('hidden');
     }
 
-    // Melhorar transparência da navbar baseada no scroll
     window.addEventListener('scroll', () => {
       const header = document.querySelector('.header-glass');
       const scrollPosition = window.scrollY;
@@ -216,20 +212,6 @@
       } else {
         header.classList.remove('header-scrolled');
       }
-    });
-
-    // Animação de entrada
-    window.addEventListener('load', () => {
-      const elements = document.querySelectorAll('.grid > div');
-      elements.forEach((el, index) => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        setTimeout(() => {
-          el.style.transition = 'all 0.6s ease';
-          el.style.opacity = '1';
-          el.style.transform = 'translateY(0)';
-        }, index * 200);
-      });
     });
   </script>
 </body>

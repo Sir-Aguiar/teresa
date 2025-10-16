@@ -143,13 +143,13 @@ class DiscographyCarousel {
     if (this.isInitialized) return;
 
     this.audioPlayer = document.getElementById("audio-player");
+
     if (!this.audioPlayer) {
       console.error("Player de áudio não encontrado!");
       return;
     }
 
     this.setupEventListeners();
-    this.createTrackIndicators();
     this.loadTrack(0);
 
     this.isInitialized = true;
@@ -185,45 +185,6 @@ class DiscographyCarousel {
         console.log("Iniciando carregamento do áudio:", this.tracks[this.currentTrackIndex].audioFile);
       });
     }
-
-    // Navegação por teclado (apenas quando na seção)
-    document.addEventListener("keydown", (e) => {
-      if (this.isInViewport()) {
-        if (e.key === "ArrowLeft") {
-          e.preventDefault();
-          this.previousTrack();
-        } else if (e.key === "ArrowRight") {
-          e.preventDefault();
-          this.nextTrack();
-        } else if (e.key === " ") {
-          e.preventDefault();
-          this.togglePlayPause();
-        }
-      }
-    });
-  }
-
-  createTrackIndicators() {
-    const indicatorsContainer = document.getElementById("track-indicators");
-    if (!indicatorsContainer) return;
-
-    indicatorsContainer.innerHTML = "";
-
-    this.tracks.forEach((_, index) => {
-      const indicator = document.createElement("div");
-      indicator.className = `w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
-        index === 0 ? "bg-primary" : "bg-gray-300 hover:bg-gray-400"
-      }`;
-      indicator.setAttribute("data-track", index);
-      indicator.addEventListener("click", () => this.loadTrack(index));
-      indicatorsContainer.appendChild(indicator);
-    });
-
-    // Atualizar total de faixas
-    const totalTracksElement = document.getElementById("total-tracks");
-    if (totalTracksElement) {
-      totalTracksElement.textContent = this.tracks.length;
-    }
   }
 
   loadTrack(index) {
@@ -240,16 +201,9 @@ class DiscographyCarousel {
       this.audioPlayer.pause();
     }
 
-    // Atualizar informações da faixa
     this.updateTrackInfo(track, index);
-
-    // Atualizar source do áudio
     this.updateAudioSource(track);
-
-    // Atualizar indicadores
     this.updateIndicators();
-
-    // Animação de transição
     this.animateTrackChange();
   }
 
@@ -290,36 +244,7 @@ class DiscographyCarousel {
     // Definir nova fonte diretamente no elemento audio
     this.audioPlayer.src = track.audioFile + ".mp3";
 
-    // Forçar reload do player
     this.audioPlayer.load();
-
-    // Verificar se o arquivo existe
-    this.audioPlayer.addEventListener(
-      "loadeddata",
-      () => {
-        console.log(`✅ Áudio carregado com sucesso: ${track.title}`);
-      },
-      { once: true },
-    );
-
-    this.audioPlayer.addEventListener(
-      "error",
-      (e) => {
-        console.error(`❌ Erro ao carregar áudio: ${track.audioFile}`, e);
-        this.showAudioError();
-      },
-      { once: true },
-    );
-  }
-
-  updateIndicators() {
-    const indicators = document.querySelectorAll("#track-indicators > div");
-    indicators.forEach((indicator, index) => {
-      const isActive = index === this.currentTrackIndex;
-      indicator.className = `w-3 h-3 rounded-full transition-all duration-300 cursor-pointer ${
-        isActive ? "bg-primary scale-110" : "bg-gray-300 hover:bg-gray-400"
-      }`;
-    });
   }
 
   animateTrackChange() {
@@ -352,17 +277,11 @@ class DiscographyCarousel {
     if (this.audioPlayer.paused) {
       this.audioPlayer.play().catch((e) => {
         console.error("Erro ao reproduzir áudio:", e);
-        this.showAudioError();
+        console.log(`Não foi possível carregar: ${this.tracks[this.currentTrackIndex].audioFile}`);
       });
     } else {
       this.audioPlayer.pause();
     }
-  }
-
-  showAudioError() {
-    const titleElement = document.getElementById("current-track-title");
-    const descriptionElement = document.getElementById("current-track-description");
-    console.log(`Não foi possível carregar: ${this.tracks[this.currentTrackIndex].audioFile}`);
   }
 
   isInViewport() {
@@ -374,49 +293,10 @@ class DiscographyCarousel {
 
     return rect.top < windowHeight / 2 && rect.bottom > windowHeight / 2;
   }
-
-  // Método para debug - verificar status dos arquivos
-  async debugTracks() {
-    console.log("=== DEBUG DISCOGRAFIA ===");
-    for (let i = 0; i < this.tracks.length; i++) {
-      const track = this.tracks[i];
-      console.log(`Faixa ${i + 1}: ${track.title}`);
-      console.log(`Arquivo: ${track.audioFile}`);
-
-      try {
-        const response = await fetch(`${track.audioFile}`, { method: "HEAD" });
-        console.log(`Status: ${response.ok ? "✅ OK" : "❌ Erro"} (${response.status})`);
-      } catch (error) {
-        console.log(`Status: ❌ Erro de rede`);
-      }
-      console.log("---");
-    }
-  }
 }
 
 // Instância global do carrossel
 let discographyCarousel;
-
-// Inicializar quando o DOM estiver carregado
-document.addEventListener("DOMContentLoaded", () => {
-  // Aguardar elementos estarem prontos
-  setTimeout(() => {
-    try {
-      discographyCarousel = new DiscographyCarousel();
-
-      // Debug para verificar arquivos (remover em produção)
-      if (window.location.hostname === "localhost" || window.location.hostname === "127.0.0.1") {
-        setTimeout(() => {
-          if (discographyCarousel) {
-            discographyCarousel.debugTracks();
-          }
-        }, 1000);
-      }
-    } catch (error) {
-      console.error("Erro ao inicializar carrossel de discografia:", error);
-    }
-  }, 500);
-});
 
 // Exportar para uso global
 window.DiscographyManager = {
